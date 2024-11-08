@@ -1,0 +1,112 @@
+.contact-container{
+    width: 100%;
+    height: 700px;
+    background-image: url("src/logos/contact-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+.contact-content-container{
+    width: 102.85%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.592);
+    margin-left: -2%;
+    overflow: hidden;
+}
+.contact-heading-container{
+    width: fit-content;
+    padding: 10px;
+    margin: auto;
+
+    padding-top: 100px;
+}
+.contact-heading{
+    text-align: center;
+}
+.contact-content{
+    font-size: 20px;
+    padding-top: 19px;
+    padding-bottom: 25px;
+    display: inline;
+}
+.contact-container1{
+    font-size: 20px;
+    padding-top: 19px;
+    padding-bottom: 25px;
+    display: none;
+}
+.contact-form-container{
+    width: fit-content;
+    padding: 30px;
+    margin: auto;
+    box-shadow: 0 0  3px black;
+}
+.contact-label{
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.contact-line{
+    width: 160px;
+    height: 3px;
+    color: green;
+    background-color: green;
+    opacity: 1;
+    margin: auto;
+}
+.contact-input{
+    width: 400px;
+    height: 50px;
+    font-size: 18px;
+    border-width: 0px;
+    border-bottom: 2px solid black;
+    margin-bottom:10px
+
+}
+.contact-textarea{
+    width: 400px;
+    height: 100px;
+    resize: none;
+}
+.contact-button{
+   padding: 8px;
+   background-color: crimson;
+   color: white;
+   width: 90px;
+   border-radius: 10px;
+   position: relative;
+   left: 170px;
+
+}
+
+.contact-input:focus {
+   
+    border-bottom: 3px solid blue;
+}
+
+@media (min-width:300px) and (max-width:450px) {
+    .contact-form-container{
+        width:90%;
+        height: fit-content;
+    }
+    .contact-label{
+        font-size: 15px;
+    }
+    .contact-input{
+        width: 100%;
+    }
+    .contact-textarea{
+        width: 100%;
+    }
+    .contact-button{
+       position: relative;
+       left:30%;
+    }
+    .contact-content{
+        display: none;
+    }
+    .contact-container1{
+        display: block;
+        margin-top: 20px;
+    }
+}

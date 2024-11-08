@@ -1,0 +1,76 @@
+.fotter-container{
+    width: 100%;
+    height:200px;
+    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: black;
+    color: white;
+}
+ .fotter-sec1{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ }
+ .fotter-sec1 h3{
+    width: 200px;
+
+ }
+ .fotter-sec2{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+
+ }
+ 
+ .fotter-contact-container{
+   width: 200px;
+   height: fit-content;
+   padding: 3px;
+   display: flex;
+   justify-content:space-between;
+ }
+
+
+ .fotter-contact-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+ }
+
+ .fotter-sec2-content{
+    width: fit-content;
+    font-size: 13px;
+ }
+
+ .fotter-line{
+    color: white;
+    height: 2px;
+    background-color: white;
+ }
+
+ .fotter-contant-last{
+    width: 100%;
+    text-align: center;
+ }
+
+ .custom-iconf{
+   font-size: 25px;
+   color: white;
+   background-color: black;
+ }
+ .custom-iconf:hover{
+   color: green;
+ }
+
+ @media (min-width:200px) and (max-width:480px) {
+   .fotter-contact-container{
+      width: 100%;
+   }
+   
+ }
