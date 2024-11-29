@@ -1,91 +1,98 @@
-import React from 'react'
-import "./Contact.css"
-import { useState } from 'react'
-import emailjs from "emailjs-com"
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Autocomplete,
+  TextareaAutosize,
+} from '@mui/material';
 
+const Contact = () => {
+  const [data, setData] = useState({
+    Name: '',
+    Email: '',
+    Message: '',
+  });
 
-function Contact() {
-  var [data, setdata] = useState({ Name: "", Email: "", Message: "" })
-  function getfunctioncall(e) {
-    setdata(
-      {
-        ...data,
-        [e.target.name]: e.target.value
-      }
-    )
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(data); // Process form submission
+     
+     emailjs
+     .send(
+       'service_gfmyzzi', 
+       'template_uoooug7', 
+       {
+         from_name: data.Name,
+         from_email: data.Email,
+         message: data.Message,
+         to_name: 'Kartheek', 
+       },
+       'pbbgMyhUsxiSC1gXO'
+     )
+     .then(
+       (response) => {
+         console.log('SUCCESS!', response.status, response.text);
+         alert('Message sent successfully');
+         setData({ Name: '', Email: '', Message: '' }); 
+       },
+       (error) => {
+         console.error('FAILED...', error);
+         alert('Failed to send message. Please try again later.');
+       }
+     );
+  };
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  const handleInputChange = (e) => {
+     var{name,value}=e.target
+    setData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-    emailjs
-      .send(
-        "service_gfmyzzi",
-        'template_uoooug7',
-        {
-          from_name: data.Name,
-          from_email: data.Email,
-          message: data.Message,
-          to_name: "Kartheek"
-        },
-        "pbbgMyhUsxiSC1gXO"
-      )
-      .then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert("message sent succesfully")
-          setdata({ Name: "", Email: "", Message: "" });
-        },
-        (error) => {
-          console.error('FAILED...', error);
-        }
-      );
-  }
+  
   return (
-    // <div className='contact-container' id="contact-container">
-    //     <div className='contact-content-container'>
-    //         <div className='contact-heading-container'><h2 className='contact-heading'>Contact Me</h2><hr className='contact-line'/><p className='contact-content'>Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</p></div>
-    //         <div className='contact-form-container'>
-    //             <form onSubmit={()=>{handleSubmit(event)}}>
-    //                 <label className='contact-label'>Enter Your Name :</label> <br/>
-    //                 <input className='contact-input' type="text" required placeholder='Enter Your Name' name="Name" value={data.Name} onChange={()=>{getfunctioncall(event)}}/><br/>
-    //                 <label className='contact-label'>Enter Your Email :</label><br/>
-    //                 <input className='contact-input' requiredbtype="email" placeholder='Enter Your Email' name="Email" value={data.Email} onChange={()=>{getfunctioncall(event)}}/><br/>
-    //                 <label className='contact-label'>Message :</label><br/>
-    //                 <textarea className='contact-textarea' required name="Message" rows="4" cols="50" value={data.Message} placeholder="Write your message here..." onChange={()=>{getfunctioncall(event)}}></textarea><br/>
-    //                  <button  className='contact-button'>Send</button>
-    //             </form>
-    //         </div>
-    //   </div>
-    //   </div>
+    <div
+      className="container-fluid contact-container"
+      id="contact-container"
+      style={{ p: 4,height:550,  backgroundImage: 'url(src/logos/contact-background.jpg)', backgroundSize: 'cover',backgroundPosition: 'center',backgroundRepeat: 'no-repeat' }}>
+        <div className='background-white' style={{width:'100%', height:'fit-content',position:'absolute',left:'0px',backgroundColor:'rgba(255,255,255,0.7)'}}>
+        <div style={{zIndex:'2'}}>
+      <Box className="contact-content-container" sx={{ textAlign: 'center',marginTop:'80px'}}>
+        <Typography variant="h4" className="contact-heading" sx={{fontWeight:'bold'}}>
+          Contact Me
+        </Typography>
+        <hr className="contact-line" style={{width:'150px',height:'4px',backgroundColor:'green',color:'green',display:'inline-block',textAlign:'center',zIndex:'2'}} />
+        <Typography variant="body1" className="contact-content">
+          Feel free to Contact me by submitting the form below and I will get
+          back to you as soon as possible
+        </Typography>
+      </Box>
+      </div>
 
-    <div className='container-fluid contact-container' id='contact-container'>
-      <div className='contact-content-container'>
-        <div className='row'>
-          <div className='col-12'>
-            <div className='contact-heading-container'><h2 className='contact-heading'>Contact Me</h2><hr className='contact-line' /><p className='contact-content'>Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</p><p className='contact-container1'>Feel free to Contact me</p></div>
-          </div>
-
-        </div>
-        <div className='row'>
-          <div className='col-12'>
-            <div className='contact-form-container'>
-              <form onSubmit={() => { handleSubmit(event) }}>
-                <label className='contact-label'>Enter Your Name :</label> <br />
-                <input className='contact-input' type="text" required placeholder='Enter Your Name' name="Name" value={data.Name} onChange={() => { getfunctioncall(event) }} /><br />
-                <label className='contact-label'>Enter Your Email :</label><br />
-                <input className='contact-input' requiredbtype="email" placeholder='Enter Your Email' name="Email" value={data.Email} onChange={() => { getfunctioncall(event) }} /><br />
-                <label className='contact-label'>Message :</label><br />
-                <textarea className='contact-textarea' required name="Message" rows="4" cols="50" value={data.Message} placeholder="Write your message here..." onChange={() => { getfunctioncall(event) }}></textarea><br />
-                <button className='contact-button'>Send</button>
-              </form>
-            </div>
-          </div>
-        </div>
-
+      <Box
+        className="contact-form-container"
+        sx={{ mt: 4, maxWidth: 600, margin: '20px auto' }}
+      >
+        <form onSubmit={handleSubmit}>
+        <TextField id="outlined-basic" type='text' name={'Name'} value={data.Name} label="Enter Your Name" variant="outlined"  sx={{width:'100%',marginBottom:'12px',}} onChange={(e)=>{handleInputChange(e)}}/><br/>
+        <TextField id="outlined-basic" type='text' name={'Email'} value={data.Email} label="Enter Your Email" variant="outlined" sx={{width:'100%',marginBottom:'12px'}} onChange={(e)=>{handleInputChange(e)}} /><br/>
+        <TextField label="Your Message" multiline rows={4} name={'Message'} value={data.Message} variant="outlined"  fullWidth sx={{width:'100%',marginBottom:'12px'}} onChange={(e)=>{handleInputChange(e)}}/>
+          <Box sx={{ mt: 2,textAlign:'center' }}>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="contact-button"
+            >
+              Send
+            </Button>
+          </Box>
+        </form>
+      </Box>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Contact;

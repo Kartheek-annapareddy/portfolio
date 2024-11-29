@@ -32,7 +32,7 @@ function Header({scrolltosection}) {
           <h3 className='header-name-owner'>Annapareddy Kartheek</h3>
           </div>
           <div className='col-6 header-container2'>
-          <div ><a className='header-nav' onClick={(e) =>{ e.stopPropagation; scrolltosection('home-container')}}>Home</a></div>
+          <div ><a className='header-nav' onClick={(e) =>{ e.stopPropagation; scrolltosection('home-container')}}>Home</a><p className='scroll'></p></div>
             <div><a className='header-nav' onClick={(e) => { e.stopPropagation; scrolltosection('about-container')}}>About</a></div>
             <div><a className='header-nav' onClick={(e) => {e.stopPropagation; scrolltosection('project-container')}}>Projects</a></div>
             <div><a className='header-nav' onClick={(e) => {e.stopPropagation; scrolltosection('contact-container')}}>Contact</a></div>
