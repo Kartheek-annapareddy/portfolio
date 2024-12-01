@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Section1.css"
 import { useState } from 'react'
+import Resume from '../../assets/logos/Kartheek_Annapareddy_Resume (2) (1).pdf'
 
 
 function Section1() {
@@ -15,7 +16,7 @@ function Section1() {
   }
   function downloadfile() {
 
-    saveAs("src/assets/logos/Kartheek_Annapareddy_Resume (2) (1).pdf", "kartheek_resume.pdf")
+    saveAs(Resume, "kartheek_resume.pdf")
 
   }
 

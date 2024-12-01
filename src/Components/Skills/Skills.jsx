@@ -1,8 +1,15 @@
 import React from 'react'
 import "./Skills.css"
+import html from '../../assets/logos/html (1).png'
+import css from '../../assets/logos/css.png'
+import javascript from '../../assets/logos/javascript.png'
+import react from '../../assets/logos/react.png'
+import mongodb from '../../assets/logos/mongo-db.png'
+import nodejs from '../../assets/logos/nodejs.png'
+import python from '../../assets/logos/python.png'
 
 function Skills() {
-    var skillsarray=[{img:"src/assets/logos/html (1).png",title:"HTML"},{img:"src/assets/logos/css.png",title:"CSS"},{img:"src/assets/logos/javascript.png",title:"JAVASCRIPT"},{img:"src/assets/logos/react.png",title:"REACT"},{img:"src/assets/logos/mongo-db.png",title:"MONGODB"},{img:"src/assets/logos/nodejs.png",title:"NODE JS"},{img:"src/assets/logos/python.png",title:"PYTHON"}]
+    var skillsarray=[{img:html,title:"HTML"},{img:css,title:"CSS"},{img:javascript,title:"JAVASCRIPT"},{img:react,title:"REACT"},{img:mongodb,title:"MONGODB"},{img:nodejs,title:"NODE JS"},{img:python,title:"PYTHON"}]
   return (
    
     <div className='skills-container'>

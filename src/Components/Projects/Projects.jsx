@@ -1,10 +1,14 @@
 import React from 'react'
 import "./Project.css"
+import calc from '../../assets/logos/calculator.png'
+import weather from '../../assets/logos/weather.png'
+import stopwatch from '../../assets/logos/stopwatch.png'
+import speech from '../../assets/logos/text to speech.png'
 
 
 function Projects() {
 
-  var projectdetails = [{ title: "Calculator App", img: "src/assets/logos/calculator.png", description: "simple calculator which can perform some of the basic  mathematical operations" }, { title: "Weather", img: "src/assets/logos/weather.png", description: "Created Weather application using basic UI & Integreted weather API using Axios library " }, { title: "Stop Watch", img: "src/assets/logos/stopwatch.png", description: "" }, { title: "Text to Speech Converter", img: "src/assets/logos/text to speech.png", description: "" }]
+  var projectdetails = [{ title: "Calculator App", img:calc, description: "simple calculator which can perform some of the basic  mathematical operations" }, { title: "Weather", img:weather, description: "Created Weather application using basic UI & Integreted weather API using Axios library " }, { title: "Stop Watch", img:stopwatch, description: "" }, { title: "Text to Speech Converter", img:speech, description: "" }]
   return (
     // <div className='project-Container' id="project-container">
     //     <h3 className='project'>Projects </h3><br/><hr className='project-heading-line'/>
