@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Section1.css"
 import { useState } from 'react'
+import resume from '../../assets/logos/resume.png'
 import Resume from '../../assets/logos/Kartheek_Annapareddy_Resume (2) (1).pdf'
 
 
@@ -70,7 +71,7 @@ function Section1() {
         </div>
       </div>
       {
-        resume === "true" ? <div className='container-fluid'><div className='section1-resume'><div className='resume-back-container' onClick={getresumecall}></div> <div className='resume-img-container row text-center'><img src='src\assets\logos\resume.png'/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
+        resume === "true" ? <div className='container-fluid'><div className='section1-resume'><div className='resume-back-container' onClick={getresumecall}></div> <div className='resume-img-container row text-center'><img src={resume}/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
       }
     </div>
   )
