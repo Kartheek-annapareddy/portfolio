@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import contactimg from '../../assets/logos/contact-background.jpg'
 import {
   Box,
   Typography,
@@ -55,10 +56,8 @@ const Contact = () => {
     <div
       className="container-fluid contact-container"
       id="contact-container"
-      style={{ p: 4,height:550,  backgroundImage: 'url(src/logos/contact-background.jpg)', backgroundSize: 'cover',backgroundPosition: 'center',backgroundRepeat: 'no-repeat' }}>
-        <div className='background-white' style={{width:'100%', height:'fit-content',position:'absolute',left:'0px',backgroundColor:'rgba(255,255,255,0.7)'}}>
-        <div style={{zIndex:'2'}}>
-      <Box className="contact-content-container" sx={{ textAlign: 'center',marginTop:'80px'}}>
+      style={{height:600,  backgroundImage: `linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url(${contactimg})`, backgroundSize: 'cover',backgroundPosition: 'center',backgroundRepeat: 'no-repeat',paddingTop:'80px'}}>
+      <Box className="contact-content-container" sx={{ textAlign: 'center'}}>
         <Typography variant="h4" className="contact-heading" sx={{fontWeight:'bold'}}>
           Contact Me
         </Typography>
@@ -68,16 +67,16 @@ const Contact = () => {
           back to you as soon as possible
         </Typography>
       </Box>
-      </div>
+     
 
       <Box
         className="contact-form-container"
         sx={{ mt: 4, maxWidth: 600, margin: '20px auto' }}
       >
         <form onSubmit={handleSubmit}>
-        <TextField id="outlined-basic" type='text' name={'Name'} value={data.Name} label="Enter Your Name" variant="outlined"  sx={{width:'100%',marginBottom:'12px',}} onChange={(e)=>{handleInputChange(e)}}/><br/>
-        <TextField id="outlined-basic" type='text' name={'Email'} value={data.Email} label="Enter Your Email" variant="outlined" sx={{width:'100%',marginBottom:'12px'}} onChange={(e)=>{handleInputChange(e)}} /><br/>
-        <TextField label="Your Message" multiline rows={4} name={'Message'} value={data.Message} variant="outlined"  fullWidth sx={{width:'100%',marginBottom:'12px'}} onChange={(e)=>{handleInputChange(e)}}/>
+        <TextField id="outlined-basic" type='text' name={'Name'} value={data.Name} label="* Enter Your Name" variant="outlined"  sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}}/><br/>
+        <TextField id="outlined-basic" type='text' name={'Email'} value={data.Email} label=" * Enter Your Email" variant="outlined" sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}} /><br/>
+        <TextField label="*  Your Message" multiline rows={4} name={'Message'} value={data.Message} variant="outlined"  fullWidth sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}}/>
           <Box sx={{ mt: 2,textAlign:'center' }}>
             <Button
               type="submit"
@@ -91,7 +90,6 @@ const Contact = () => {
         </form>
       </Box>
       </div>
-    </div>
   );
 };
 
