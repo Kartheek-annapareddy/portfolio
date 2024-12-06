@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 
 const Contact = () => {
+  const[loading,setloading]=useState(0)
   const [data, setData] = useState({
     Name: '',
     Email: '',
@@ -19,6 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setloading(1)
     console.log(data); // Process form submission
      
      emailjs
@@ -36,11 +38,13 @@ const Contact = () => {
      .then(
        (response) => {
          console.log('SUCCESS!', response.status, response.text);
+         setloading(0);
          alert('Message sent successfully');
          setData({ Name: '', Email: '', Message: '' }); 
        },
        (error) => {
          console.error('FAILED...', error);
+         setloading(0)
          alert('Failed to send message. Please try again later.');
        }
      );
@@ -84,7 +88,7 @@ const Contact = () => {
               color="primary"
               className="contact-button"
             >
-              Send
+              {loading===1?'sending...':'send'}
             </Button>
           </Box>
         </form>
