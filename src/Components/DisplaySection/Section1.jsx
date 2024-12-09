@@ -55,7 +55,7 @@ function Section1() {
             <a href="https://www.instagram.com/kartheek_naidu_4799/profilecard/?igsh=MTB2aGZtNDNjMzFjbw==" target='blank'><i class="bi bi-instagram custom-icon" ></i></a>
             <a href="https://github.com/Kartheek-annapareddy" target='blank'><i class="bi bi-github custom-icon"></i></a>
             <a href="https://www.linkedin.com/in/annapareddy-kartheek-bb8365255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='blank'><i class="bi bi-linkedin custom-icon"></i></a>
-            <a href="https://wa.me/8106953128" target='blank'><i class="bi bi-whatsapp custom-icon"></i></a>
+            <a href="https://wa.me/918106953128" target='blank'><i class="bi bi-whatsapp custom-icon"></i></a>
           </div>
         </div>
         <div className='col-11'>
@@ -71,7 +71,7 @@ function Section1() {
         </div>
       </div>
       {
-        resume === "true" ? <div className='container-fluid'><div className='section1-resume'><div className='resume-back-container' onClick={getresumecall}></div> <div className='resume-img-container row text-center'><img src={resumepic}/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
+        resume === "true" ? <div className='container-fluid' onClick={getresumecall}><div className='section1-resume'><div className='resume-img-container row text-center' onClick={(e)=>{e.stopropagation()}}><img src={resumepic}/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
       }
     </div>
   )
