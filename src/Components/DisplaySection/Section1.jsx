@@ -71,7 +71,7 @@ function Section1() {
         </div>
       </div>
       {
-        resume === "true" ? <div className='container-fluid' onClick={getresumecall}><div className='section1-resume'><div className='resume-img-container row text-center' onClick={(e)=>{e.stopropagation()}}><img src={resumepic}/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
+        resume === "true" ? <div className='container-fluid' onClick={getresumecall}><div className='section1-resume'><div className='resume-img-container row text-center' onClick={(e)=>{e.stopPropagation()}}><img src={resumepic}/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
       }
     </div>
   )
