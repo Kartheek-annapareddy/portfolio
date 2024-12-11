@@ -2,13 +2,13 @@ import React from 'react'
 import "./Project.css"
 import calc from '../../assets/logos/calculator.png'
 import weather from '../../assets/logos/weather.png'
-import stopwatch from '../../assets/logos/stopwatch.png'
-import speech from '../../assets/logos/text to speech.png'
+import stopwatch from '../../assets/logos/eCommerce.jpeg'
+import speech from '../../assets/logos/Ticket-Booking.jpeg'
 
 
 function Projects() {
 
-  var projectdetails = [{ title: "Calculator App", img:calc, description: "simple calculator which can perform some of the basic  mathematical operations",sourcecode:'#',live:'https://kartheek-calculator-app.netlify.app/' }, { title: "Weather", img:weather, description: "Created Weather application using basic UI & Integreted weather API using Axios library ",sourcecode:'https://github.com/Kartheek-annapareddy/WeatherApp',live:'https://aweatherapplication-ak.netlify.app/' }, { title: "Stop Watch", img:stopwatch, description: "" }, { title: "Text to Speech Converter", img:speech, description: "" }]
+  var projectdetails = [{ title: "Calculator App", img:calc, description: "simple calculator which can perform some of the basic  mathematical operations",sourcecode:'#',live:'https://kartheek-calculator-app.netlify.app/' }, { title: "Weather", img:weather, description: "Created Weather application using basic UI & Integreted weather API using Axios library ",sourcecode:'https://github.com/Kartheek-annapareddy/WeatherApp',live:'https://aweatherapplication-ak.netlify.app/' }, { title: "E-Cart Appalication", img:stopwatch, description: "Basic E-Cart application which is Developed using Reactjs,Redux,Axios librarys where data is stored in json server.",sourcecode:'https://github.com/Kartheek-annapareddy/E-Cart-Application' }, { title: "Ticket Booking Application", img:speech, description: "Ticket Booking Application Where the user can register login and book tickets for the movie.Technologies used Reactjs,Expressjs,Sql",sourcecode:'https://github.com/Kartheek-annapareddy/Ticket-Booking' }]
   return (
     // <div className='project-Container' id="project-container">
     //     <h3 className='project'>Projects </h3><br/><hr className='project-heading-line'/>

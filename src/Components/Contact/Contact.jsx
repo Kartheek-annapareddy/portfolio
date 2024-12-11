@@ -78,9 +78,9 @@ const Contact = () => {
         sx={{ mt: 4, maxWidth: 600, margin: '20px auto' }}
       >
         <form onSubmit={handleSubmit}>
-        <TextField id="outlined-basic" type='text' name={'Name'} value={data.Name} label="* Enter Your Name" variant="outlined"  sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}}/><br/>
-        <TextField id="outlined-basic" type='text' name={'Email'} value={data.Email} label=" * Enter Your Email" variant="outlined" sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}} /><br/>
-        <TextField label="*  Your Message" multiline rows={4} name={'Message'} value={data.Message} variant="outlined"  fullWidth sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}}/>
+        <TextField id="outlined-basic" required type='text' name={'Name'} value={data.Name} label="* Enter Your Name" variant="outlined"  sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}}/><br/>
+        <TextField id="outlined-basic" required type='email' name={'Email'} value={data.Email} label=" * Enter Your Email" variant="outlined" sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}} /><br/>
+        <TextField label="*  Your Message" required multiline rows={4} name={'Message'} value={data.Message} variant="outlined"  fullWidth sx={{width:'100%',marginBottom:'12px',paddingRight:1,paddingLeft:1}} onChange={(e)=>{handleInputChange(e)}}/>
           <Box sx={{ mt: 2,textAlign:'center' }}>
             <Button
               type="submit"
