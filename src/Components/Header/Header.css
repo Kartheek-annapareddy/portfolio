@@ -122,6 +122,7 @@ html {
 }
 .menu-container.open{
     transform: translateX(-100px);
+    display: none;
 }
 
 .menu-container a{
@@ -173,6 +174,9 @@ html {
     .header-name-owner{
         font-size: 15px;
     }
+    .menu-container.open{
+        display: inline;
+    }
 }
 
 @media (min-width: 460px) and (max-width: 750px) {
@@ -181,7 +185,9 @@ html {
         font-size: 30px;
         width: 80%;
         overflow: hidden;
-
+    }
+    .menu-container.open{
+        display: inline;
     }
 
     .header-container2 {

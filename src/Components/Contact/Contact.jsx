@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import contactimg from '../../assets/logos/contact-background.jpg'
+import ReactLoading from 'react-loading'
+
 import {
   Box,
   Typography,
   TextField,
   Button,
+  Snackbar,
+  Alert,
   Autocomplete,
   TextareaAutosize,
 } from '@mui/material';
 
 const Contact = () => {
   const[loading,setloading]=useState(0)
+  const[open,setopen]=useState(0)
+  const[error,seterror]=useState(0)
   const [data, setData] = useState({
     Name: '',
     Email: '',
     Message: '',
   });
+  
+  const handleClose=()=>{
+    setopen(0)
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,13 +49,15 @@ const Contact = () => {
        (response) => {
          console.log('SUCCESS!', response.status, response.text);
          setloading(0);
-         alert('Message sent successfully');
-         setData({ Name: '', Email: '', Message: '' }); 
+         setopen(1);
+         seterror(0)
+         setData({ Name: '', Email: '', Message: '' });  
        },
        (error) => {
          console.error('FAILED...', error);
          setloading(0)
-         alert('Failed to send message. Please try again later.');
+         setopen(1)
+         seterror(1)
        }
      );
   };
@@ -88,11 +100,23 @@ const Contact = () => {
               color="primary"
               className="contact-button"
             >
-              {loading===1?'sending...':'send'}
+              {loading===1?<div style={{display:'flex'}}><ReactLoading type='spin' color="#00BFFF" height={25} width={25}/><div>sending</div></div>:'send'}
             </Button>
           </Box>
         </form>
       </Box>
+      
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+       <Alert
+        onClose={handleClose}
+       severity={error?'error':'success'}
+        variant="filled"
+       sx={{width: '100%'}}
+     >
+      {error?'Failed to send message':'message sent successfully'}
+  </Alert>
+</Snackbar>
+
       </div>
   );
 };
