@@ -7,7 +7,15 @@
 .skill-heading{
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+    transition:1s ease;
 }
+ .skill-heading.skill-heading-animation{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 .skill-heading h2{
     width: fit-content;
     text-align: center;

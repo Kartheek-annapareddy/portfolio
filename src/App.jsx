@@ -6,6 +6,7 @@ import Projects from './Components/Projects/Projects'
 import Contact from './Components/Contact/Contact'
 import Skills from './Components/Skills/Skills'
 import Fotter from './Components/Fotter/Fotter'
+import AnimatedComponent from './Components/Animation/Animation'
 
 function App() {
   function scrolltosection(id){
@@ -23,6 +24,8 @@ function App() {
      <Projects/>
      <Contact/>
      <Fotter/>
+     {/* <div style={{height:'600px'}}>the</div>
+     <AnimatedComponent/> */}
     </div>
   )
 }

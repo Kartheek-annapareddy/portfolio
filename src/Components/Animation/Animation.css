@@ -1,0 +1,13 @@
+/* Initial state: invisible and shifted down */
+.box {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Visible state: fully visible and in place */
+  .box.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

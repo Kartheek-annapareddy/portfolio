@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState ,useRef} from 'react';
 import emailjs from 'emailjs-com';
 import contactimg from '../../assets/logos/contact-background.jpg'
 import ReactLoading from 'react-loading'
+import { useEffect } from 'react';
+import './Contact.css'
 
 import {
   Box,
@@ -14,6 +16,7 @@ import {
   TextareaAutosize,
 } from '@mui/material';
 
+
 const Contact = () => {
   const[loading,setloading]=useState(0)
   const[open,setopen]=useState(0)
@@ -23,6 +26,29 @@ const Contact = () => {
     Email: '',
     Message: '',
   });
+
+const contactref = useRef(null);
+
+
+  useEffect(()=>{
+    const observer= new IntersectionObserver(
+      ([entry])=>{
+        if(entry.isIntersecting){
+            contactref.current.classList.add('animation')
+        }
+      },{threshold:0.1}
+    )
+
+    if(contactref.current){
+       observer.observe(contactref.current)
+    }
+    return()=>{
+      if(contactref.current){
+        observer.unobserve(contactref.current)
+      }
+    }
+  },[])
+   
   
   const handleClose=()=>{
     setopen(0)
@@ -70,6 +96,7 @@ const Contact = () => {
   
   return (
     <div
+     ref={contactref}
       className="container-fluid contact-container"
       id="contact-container"
       style={{height:600,  backgroundImage: `linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6)),url(${contactimg})`, backgroundSize: 'cover',backgroundPosition: 'center',backgroundRepeat: 'no-repeat',paddingTop:'80px'}}>
