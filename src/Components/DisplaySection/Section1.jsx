@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Section1.css"
 import { useState } from 'react'
-import resumepic from '../../assets/logos/resume.png'
 import Resume from '../../assets/logos/Kartheek_Annapareddy_Resume (2) (1).pdf'
+import Resumepic from '../../assets/logos/portfolio_resume.jpg'
 
 
 function Section1() {
@@ -71,10 +71,29 @@ function Section1() {
         </div>
       </div>
       {
-        resume === "true" ? <div className='container-fluid' onClick={getresumecall}><div className='section1-resume'><div className='resume-img-container row text-center' onClick={(e)=>{e.stopPropagation()}}><img src={resumepic}/></div><div><button className='resume-download' onClick={downloadfile}>download</button></div></div></div> : null
+        resume === "true" ? 
+             
+        <div className='modal' onClick={getresumecall}>
+            <div className='modal-content' onClick={(e)=>{e.stopPropagation()}}>
+              <img src={Resumepic}/>
+            </div>
+            <div>
+            <button className='resume-download' onClick={downloadfile}>download</button>
+             </div> 
+          </div>
+        : null
       }
     </div>
   )
 }
 
 export default Section1;
+
+
+
+
+
+
+
+
+
