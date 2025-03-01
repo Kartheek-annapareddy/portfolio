@@ -123,8 +123,9 @@
 
 .contact-container{
     opacity: 0;
-    transform: translate(0px ,200px);
+    transform: translate(0,100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    overflow: hidden;
 }
 
 .contact-container.animation{

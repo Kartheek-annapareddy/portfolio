@@ -123,6 +123,17 @@
 
  }
 
+ .spinner-resume{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    border: 5px solid rgb(128, 128, 205);
+    border-radius: 50%;
+    border-top: 5px solid rgb(66, 66, 173);
+    transform: rotate(360deg);
+    transition: 2s linear;
+ }
+
 @keyframes drage-dot {
     0%{
         bottom: 60px;

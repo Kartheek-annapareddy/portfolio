@@ -148,7 +148,7 @@ html {
 }
 
 
-@media (min-width: 320px) and (max-width: 450px) {
+@media (min-width: 120px) and (max-width: 450px) {
 
     .header-container1 {
         font-size: 0.8rem;
@@ -212,4 +212,5 @@ html {
     }
    
 }
+
 

@@ -7,6 +7,7 @@ import Resumepic from '../../assets/logos/portfolio_resume.jpg'
 
 function Section1() {
   var [resume, setresume] = useState("false");
+  var[resumeloaded,setresumeloaded]=useState(false)
   function getresumecall() {
     if (resume === "true") {
       setresume("false");
@@ -64,7 +65,7 @@ function Section1() {
           <div className='text-center'><h1>ANNAPAREDDY KARTHEEK</h1></div>
           <div className='text-center'> <p >A Result-Oriented Web Developer building and managing Websites</p></div>
           <div className='text-center'><button className='section1-resume-btn text-center' onClick={getresumecall}>Resume</button> </div>
-          <div className='text-center'><button className='section1-resume-btn-download' onClick={downloadfile}>Resume download</button></div>
+          <div className='text-center'><button className='section1-resume-btn-download' onClick={downloadfile}>Resume <i class="bi bi-download"></i></button></div>
           <div className='drage-container'>
             <p className='drage'>.</p>
           </div>
@@ -74,12 +75,20 @@ function Section1() {
         resume === "true" ? 
              
         <div className='modal' onClick={getresumecall}>
-            <div className='modal-content' onClick={(e)=>{e.stopPropagation()}}>
-              <img src={Resumepic}/>
-            </div>
-            <div>
-            <button className='resume-download' onClick={downloadfile}>download</button>
-             </div> 
+           
+             <div className='modal-content' onClick={(e)=>{e.stopPropagation()}}>
+             <img 
+      src={Resumepic}
+      alt="Resume"
+      onLoad={() => setresumeloaded(true)}
+      style={{ display: resumeloaded ? 'block' : 'none' }}
+    />
+   
+    {!resumeloaded && <div className='spinner-resume'></div>}
+          </div>
+          <div>
+          <button className='resume-download' onClick={downloadfile}>download</button>
+           </div>            
           </div>
         : null
       }
