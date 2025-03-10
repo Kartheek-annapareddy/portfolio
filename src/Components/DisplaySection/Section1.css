@@ -124,14 +124,23 @@
  }
 
  .spinner-resume{
-    width: 25px;
-    height: 25px;
+    width: 45px;
+    height: 45px;
     margin: auto;
     border: 5px solid rgb(128, 128, 205);
     border-radius: 50%;
     border-top: 5px solid rgb(66, 66, 173);
-    transform: rotate(360deg);
+    animation: spinning 3s linear infinite;
     transition: 2s linear;
+ }
+
+ @keyframes spinning{
+    0%{  
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg)
+    }
  }
 
 @keyframes drage-dot {
